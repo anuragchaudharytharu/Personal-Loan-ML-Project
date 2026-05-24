@@ -3,6 +3,12 @@ from typing import List
 
 HYPHEN_E_DOT = '-e .'
 
+REPO_NAME = "Personal-Loan-ML-Project"
+AUTHOR_USER_NAME = "anuragchaudharytharu"
+SRC_REPO = "mlProject"
+AUTHOR_EMAIL = "anuragchaudharytharu371@gmail.com"
+
+
 def get_requirements(file_path:str) -> List[str]:
     # this function will return the list of requirements    
     requirements = []
@@ -17,11 +23,14 @@ def get_requirements(file_path:str) -> List[str]:
     return requirements
 
 setup(
-    name="mlproject",
+    name=SRC_REPO,
     version="0.0.1",
-    author="Anurag Chaudhary Tharu",
-    author_email="anuragchaudharytharu371@gmail.com",
+    author=AUTHOR_USER_NAME,
+    author_email=AUTHOR_EMAIL,
+    install_requires=get_requirements('requirements.txt'),
+    project_urls={
+        "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
+    },
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    install_requires=get_requirements('requirements.txt')
 )
