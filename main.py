@@ -7,23 +7,39 @@ from mlproject.pipeline import (
 )
 
 
-def run_pipeline(stage_name, obj):
+def run_pipeline(stage_name, obj, *args):
     try:
-        logger.info(">>>>>>> %s started <<<<<<<", stage_name)
-        obj.main()
-        logger.info(">>>>>>> %s completed <<<<<<<", stage_name)
+        logger.info(">>>>>>> %s STARTED <<<<<<<", stage_name)
+
+        result = obj.main(*args)
+
+        logger.info(">>>>>>> %s COMPLETED <<<<<<<", stage_name)
+
+        return result
+
     except Exception as e:
         raise CustomException(e, sys)
 
 
 if __name__ == "__main__":
 
-    run_pipeline(
+    # ---------------- INGESTION ----------------
+    train_path, test_path = run_pipeline(
         "Data Ingestion Stage",
         DataIngestionTrainingPipeline()
     )
 
-    run_pipeline(
+    # ---------------- VALIDATION ----------------
+    validation_status = run_pipeline(
         "Data Validation Stage",
-        DataValidationTrainingPipeline()
+        DataValidationTrainingPipeline(),
+        train_path,
+        test_path
     )
+
+    # stop pipeline if validation fails
+    if not validation_status:
+        logger.error("Data Validation Failed. Stopping pipeline.")
+        raise Exception("Pipeline stopped due to validation failure")
+
+    logger.info("Pipeline executed successfully")

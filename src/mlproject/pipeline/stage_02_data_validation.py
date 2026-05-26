@@ -1,20 +1,32 @@
 from mlproject.config import ConfigurationManager
 from mlproject.components import DataValidation
+from mlproject.logging import logger
+from mlproject.exception import CustomException
+import sys
 
 
 class DataValidationTrainingPipeline:
     def __init__(self):
         pass
 
-    def main(self):
-        config = ConfigurationManager()
+    def main(self, train_path, test_path):
 
-        data_validation_config = (
-            config.get_data_validation_config()
-        )
+        try:
+            logger.info("Data Validation Pipeline started")
 
-        data_validation = DataValidation(
-            config=data_validation_config
-        )
+            # load config (only settings, not data)
+            config = ConfigurationManager()
+            validation_config = config.get_data_validation_config()
 
-        data_validation.validate_all_columns()
+            # component
+            validation = DataValidation(validation_config)
+
+            # run validation using ingestion outputs
+            status = validation.validate(train_path, test_path)
+
+            logger.info("Data Validation Pipeline completed")
+
+            return status
+
+        except Exception as e:
+            raise CustomException(e, sys)

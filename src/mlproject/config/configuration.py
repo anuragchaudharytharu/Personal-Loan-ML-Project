@@ -32,6 +32,7 @@ class ConfigurationManager:
             [Path(self.config.artifacts_root)]
         )
 
+    # DATA INGESTION
     def get_data_ingestion_config(self) -> DataIngestionConfig:
 
         config = self.config.data_ingestion
@@ -43,21 +44,20 @@ class ConfigurationManager:
         return DataIngestionConfig(
             root_dir=Path(config.root_dir),
             source_URL=config.source_URL,
-            local_data_file=Path(config.local_data_file)
+            local_data_file=Path(config.local_data_file),
+            train_data_path = Path(config.train_data_path),
+            test_data_path = Path(config.test_data_path)
         )        
     
+    # DATA VALIDATION
     def get_data_validation_config(self) -> DataValidationConfig:
-
         config = self.config.data_validation
         schema = self.schema.COLUMNS
 
-        create_directories(
-            [Path(config.root_dir)]
-        )
+        create_directories([Path(config.root_dir)])
 
         return DataValidationConfig(
             root_dir=Path(config.root_dir),
-            STATUS_FILE = config.STATUS_FILE,
-            downloaded_data_dir = config.downloaded_data_dir,
-            all_schema = schema,
+            status_file=Path(config.status_file),
+            all_schema=schema
         )
