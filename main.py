@@ -7,42 +7,23 @@ from mlproject.pipeline import (
 )
 
 
-STAGE_NAME = "Data Ingestion Stage"
-if __name__ == "__main__":
+def run_pipeline(stage_name, obj):
     try:
-        logger.info(
-            ">>>>>>> stage %s started <<<<<<<",
-            STAGE_NAME
-        )
-
-        data_ingestion_obj = DataIngestionTrainingPipeline()
-
-        data_ingestion_obj.main()
-
-        logger.info(
-            ">>>>>>> stage %s completed <<<<<<<",
-            STAGE_NAME
-        )
-
+        logger.info(">>>>>>> %s started <<<<<<<", stage_name)
+        obj.main()
+        logger.info(">>>>>>> %s completed <<<<<<<", stage_name)
     except Exception as e:
         raise CustomException(e, sys)
-    
-STAGE_NAME = "Data Validation Stage"
+
+
 if __name__ == "__main__":
-    try:
-        logger.info(
-            ">>>>>>> stage %s started <<<<<<<",
-            STAGE_NAME
-        )
 
-        data_validation_obj = DataValidationTrainingPipeline()
+    run_pipeline(
+        "Data Ingestion Stage",
+        DataIngestionTrainingPipeline()
+    )
 
-        data_validation_obj.main()
-
-        logger.info(
-            ">>>>>>> stage %s completed <<<<<<<",
-            STAGE_NAME
-        )
-
-    except Exception as e:
-        raise CustomException(e, sys)
+    run_pipeline(
+        "Data Validation Stage",
+        DataValidationTrainingPipeline()
+    )
