@@ -1,0 +1,19 @@
+COLUMNS:
+  ID: int64
+  Age: int64
+  Experience: int64
+  Income: int64
+  ZIP Code: int64
+  Family: intt64
+  CCAvg: float64
+  Education: int64
+  Mortgage: int64
+  Personal Loan: int64
+  Securities Account: int64
+  CD Account: int64
+  Online: int64
+  CreditCard: int64
+
+
+TARGET_COLUMN:
+  name: Peronal Loan

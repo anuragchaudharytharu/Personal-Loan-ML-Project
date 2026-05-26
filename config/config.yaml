@@ -1,0 +1,6 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://raw.githubusercontent.com/anuragchaudharytharu/Data-Files/main/Bank%20Personal%20Loan/Bank_Personal_Loan_Modelling.csv
+  local_data_file: artifacts/data_ingestion/data.csv

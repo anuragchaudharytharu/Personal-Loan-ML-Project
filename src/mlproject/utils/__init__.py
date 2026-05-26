@@ -1,10 +1,11 @@
-from .utils_config import (
+from mlproject.utils.utils_config import (
     save_bin,
     save_json,
     load_bin,
     load_json,
     create_directories,
-    read_yaml
+    read_yaml,
+    get_size
 )
 
 __all__ = [
@@ -13,5 +14,6 @@ __all__ = [
     "load_bin",
     "load_json",
     "create_directories",
-    "read_yaml"
+    "read_yaml",
+    "get_size"
 ]
