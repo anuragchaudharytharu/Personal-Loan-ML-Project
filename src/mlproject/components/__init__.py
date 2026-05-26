@@ -1,7 +1,10 @@
 from .data_ingestion import (
-    DataIngestion
+    DataIngestion,
 )
 
+from .data_validation import DataValidation
+
 __all__ = [
-    "DataIngestion"
+    "DataIngestion",
+    "DataValidation"
 ]

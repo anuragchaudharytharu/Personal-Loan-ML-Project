@@ -9,7 +9,10 @@ from mlproject.utils import (
     create_directories
 )
 
-from mlproject.entity import DataIngestionConfig
+from mlproject.entity import (
+    DataValidationConfig,
+    DataIngestionConfig
+)
 from pathlib import Path
 
 class ConfigurationManager:
@@ -41,4 +44,20 @@ class ConfigurationManager:
             root_dir=Path(config.root_dir),
             source_URL=config.source_URL,
             local_data_file=Path(config.local_data_file)
+        )        
+    
+    def get_data_validation_config(self) -> DataValidationConfig:
+
+        config = self.config.data_validation
+        schema = self.schema.COLUMNS
+
+        create_directories(
+            [Path(config.root_dir)]
+        )
+
+        return DataValidationConfig(
+            root_dir=Path(config.root_dir),
+            STATUS_FILE = config.STATUS_FILE,
+            downloaded_data_dir = config.downloaded_data_dir,
+            all_schema = schema,
         )

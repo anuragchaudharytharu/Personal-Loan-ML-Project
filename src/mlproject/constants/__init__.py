@@ -1,6 +1,7 @@
-from .constants_config import PARAMS_FILE_PATH, SCHEMA_FILE_PATH, CONFIG_FILE_PATH
+from .constants_config import PARAMS_FILE_PATH, SCHEMA_FILE_PATH, CONFIG_FILE_PATH, ROOT_DIR
 
 __all__ = [
+    "ROOT_DIR",
     "PARAMS_FILE_PATH",
     "SCHEMA_FILE_PATH",
     "CONFIG_FILE_PATH"
