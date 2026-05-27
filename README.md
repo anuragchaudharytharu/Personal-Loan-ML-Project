@@ -168,7 +168,7 @@ It belongs to:
     inference/deployment layer
 
 
-🚀 COMPLETE MENTAL MODEL
+## 🚀 COMPLETE MENTAL MODEL
 
 | File             | Role                  |
 | ---------------- | --------------------- |
@@ -184,6 +184,7 @@ It belongs to:
 | app.py           | prediction UI/API     |
 
 
+## How to run this project ?
 
     Step 1: (optional) create .venv vitual environament
 
