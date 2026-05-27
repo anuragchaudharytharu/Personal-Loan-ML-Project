@@ -1,0 +1,97 @@
+Personal-Loan-ML-Project                                 
+├─ artifacts                                             
+│  ├─ data_ingestion                                     
+│  │  ├─ data.csv                                        
+│  │  ├─ test.csv                                        
+│  │  └─ train.csv                                       
+│  └─ data_validation                                    
+│     └─ status.txt                                      
+├─ config                                                
+│  └─ config.yaml                                        
+├─ logs                                                  
+│  └─ running_log.log                                    
+├─ research                                              
+│  ├─ 01_data_ingestion.ipynb                            
+│  ├─ 02_data_validation.ipynb                           
+│  ├─ 03_data_transformation.ipynb                       
+│  ├─ 04_model_trainer.ipynb                             
+│  ├─ 05_model_evaluation.ipynb                          
+│  ├─ Bank_Personal_Loan_Modelling.csv                   
+│  ├─ Experiment.ipynb                                   
+│  └─ trials.ipynb                                       
+├─ src                                                   
+│  ├─ mlproject                                          
+│  │  ├─ components                                      
+│  │  │  ├─ __pycache__                                  
+│  │  │  │  ├─ data_ingestion.cpython-314.pyc            
+│  │  │  │  ├─ data_validation.cpython-314.pyc           
+│  │  │  │  └─ __init__.cpython-314.pyc                  
+│  │  │  ├─ data_ingestion.py                            
+│  │  │  ├─ data_validation.py                           
+│  │  │  └─ __init__.py                                  
+│  │  ├─ config                                          
+│  │  │  ├─ __pycache__                                  
+│  │  │  │  ├─ configuration.cpython-314.pyc             
+│  │  │  │  └─ __init__.cpython-314.pyc                  
+│  │  │  ├─ configuration.py                             
+│  │  │  └─ __init__.py                                  
+│  │  ├─ constants                                       
+│  │  │  ├─ __pycache__                                  
+│  │  │  │  ├─ constants_config.cpython-314.pyc          
+│  │  │  │  └─ __init__.cpython-314.pyc                  
+│  │  │  ├─ constants_config.py                          
+│  │  │  └─ __init__.py                                  
+│  │  ├─ entity                                          
+│  │  │  ├─ __pycache__                                  
+│  │  │  │  ├─ config_entity.cpython-314.pyc             
+│  │  │  │  └─ __init__.cpython-314.pyc                  
+│  │  │  ├─ config_entity.py                             
+│  │  │  └─ __init__.py                                  
+│  │  ├─ exception                                       
+│  │  │  ├─ __pycache__                                  
+│  │  │  │  ├─ exception_config.cpython-314.pyc          
+│  │  │  │  └─ __init__.cpython-314.pyc                  
+│  │  │  ├─ exception_config.py                          
+│  │  │  └─ __init__.py                                  
+│  │  ├─ logging                                         
+│  │  │  ├─ __pycache__                                  
+│  │  │  │  ├─ logging_config.cpython-314.pyc            
+│  │  │  │  └─ __init__.cpython-314.pyc                  
+│  │  │  ├─ logging_config.py                            
+│  │  │  └─ __init__.py                                  
+│  │  ├─ pipeline                                        
+│  │  │  ├─ __pycache__                                  
+│  │  │  │  ├─ stage_01_data_ingestion.cpython-314.pyc   
+│  │  │  │  ├─ stage_02_data_validation.cpython-314.pyc  
+│  │  │  │  └─ __init__.cpython-314.pyc                  
+│  │  │  ├─ stage_01_data_ingestion.py                   
+│  │  │  ├─ stage_02_data_validation.py                  
+│  │  │  └─ __init__.py                                  
+│  │  ├─ utils                                           
+│  │  │  ├─ __pycache__                                  
+│  │  │  │  ├─ utils_config.cpython-314.pyc              
+│  │  │  │  └─ __init__.cpython-314.pyc                  
+│  │  │  ├─ utils_config.py                              
+│  │  │  └─ __init__.py                                  
+│  │  ├─ __pycache__                                     
+│  │  │  └─ __init__.cpython-314.pyc                     
+│  │  └─ __init__.py                                     
+│  └─ mlproject.egg-info                                 
+│     ├─ dependency_links.txt                            
+│     ├─ PKG-INFO                                        
+│     ├─ requires.txt                                    
+│     ├─ SOURCES.txt                                     
+│     └─ top_level.txt                                   
+├─ templates                                             
+│  └─ index.html                                         
+├─ agenda.txt                                            
+├─ app.py                                                
+├─ LICENSE                                               
+├─ main.py                                               
+├─ params.yaml                                           
+├─ project tree structure                                
+├─ README.md                                             
+├─ requirements.txt                                      
+├─ schema.yaml                                           
+├─ setup.py                                              
+└─ template.py                                           

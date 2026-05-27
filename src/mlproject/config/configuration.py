@@ -1,7 +1,8 @@
 from mlproject.constants import (
     CONFIG_FILE_PATH,
     PARAMS_FILE_PATH,
-    SCHEMA_FILE_PATH
+    SCHEMA_FILE_PATH,
+    ROOT_DIR
 )
 
 from mlproject.utils import (
@@ -29,7 +30,7 @@ class ConfigurationManager:
         self.params = read_yaml(params_file_path)
 
         create_directories(
-            [Path(self.config.artifacts_root)]
+            [Path(ROOT_DIR / self.config.artifacts_root)]
         )
 
     # DATA INGESTION
