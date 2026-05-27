@@ -168,6 +168,8 @@ It belongs to:
     inference/deployment layer
 
 
+🚀 COMPLETE MENTAL MODEL
+
 | File             | Role                  |
 | ---------------- | --------------------- |
 | research         | experimentation       |
