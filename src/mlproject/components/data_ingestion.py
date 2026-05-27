@@ -50,6 +50,9 @@ class DataIngestion:
                 test_size=0.2,
                 random_state=42
             )
+            
+            Path(self.config.train_data_path).parent.mkdir(parents=True, exist_ok=True)
+            Path(self.config.test_data_path).parent.mkdir(parents=True, exist_ok=True)
 
             train_set.to_csv(self.config.train_data_path, index=False)
             test_set.to_csv(self.config.test_data_path, index=False)

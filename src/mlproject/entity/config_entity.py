@@ -15,3 +15,8 @@ class DataValidationConfig:
     root_dir: Path
     status_file: Path
     all_schema: dict
+    
+@dataclass(frozen=True)
+class DataTransformationConfig:
+    root_dir: Path
+    preprocessor_obj_file_path: Path

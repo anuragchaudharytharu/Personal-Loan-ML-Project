@@ -12,7 +12,8 @@ from mlproject.utils import (
 
 from mlproject.entity import (
     DataValidationConfig,
-    DataIngestionConfig
+    DataIngestionConfig,
+    DataTransformationConfig
 )
 from pathlib import Path
 
@@ -62,3 +63,16 @@ class ConfigurationManager:
             status_file=Path(config.status_file),
             all_schema=schema
         )
+
+    # DATA TRANSFORMATION
+    def get_data_transformation_config(self):
+        config = self.config.data_transformation
+
+        create_directories([config.root_dir])
+
+        data_transformation_config = DataTransformationConfig(
+            root_dir=Path(config.root_dir),
+            preprocessor_obj_file_path=Path(config.preprocessor_obj_file_path)
+        )
+
+        return data_transformation_config

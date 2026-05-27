@@ -15,5 +15,23 @@ COLUMNS:
   CreditCard: int64
 
 
-TARGET_COLUMN:
-  name: Peronal Loan
+target_column: Personal Loan
+
+drop_columns:
+  - ID
+  - ZIP Code
+
+categorical_columns:
+  - Education
+
+numerical_columns:
+  - Age
+  - Experience
+  - Income
+  - Family
+  - CCAvg
+  - Mortgage
+  - Securities Account
+  - CD Account
+  - Online
+  - CreditCard

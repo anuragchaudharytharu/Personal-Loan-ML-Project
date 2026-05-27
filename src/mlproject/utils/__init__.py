@@ -5,7 +5,8 @@ from mlproject.utils.utils_config import (
     load_json,
     create_directories,
     read_yaml,
-    get_size
+    get_size,
+    save_object
 )
 
 __all__ = [
@@ -15,5 +16,6 @@ __all__ = [
     "load_json",
     "create_directories",
     "read_yaml",
-    "get_size"
+    "get_size",
+    "save_object"
 ]

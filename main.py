@@ -3,7 +3,8 @@ import sys
 from mlproject.logging import logger
 from mlproject.pipeline import (
     DataIngestionTrainingPipeline,
-    DataValidationTrainingPipeline
+    DataValidationTrainingPipeline,
+    DataTransformationTrainingPipeline
 )
 
 
@@ -41,5 +42,18 @@ if __name__ == "__main__":
     if not validation_status:
         logger.error("Data Validation Failed. Stopping pipeline.")
         raise Exception("Pipeline stopped due to validation failure")
+
+    # ---------------- TRANSFORMATION ----------------
+    train_arr, test_arr = run_pipeline(
+        "Data Transformation Stage",
+        DataTransformationTrainingPipeline(),
+        train_path,
+        test_path
+    )
+
+    logger.info("Data Transformation Completed Successfully")
+
+    logger.info(f"Train array shape: {train_arr.shape}")
+    logger.info(f"Test array shape: {test_arr.shape}")
 
     logger.info("Pipeline executed successfully")

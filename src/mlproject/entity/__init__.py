@@ -1,9 +1,11 @@
 from .config_entity import (
     DataIngestionConfig,
-    DataValidationConfig
+    DataValidationConfig,
+    DataTransformationConfig
 )
 
 __all__ = [
     "DataIngestionConfig",
-    "DataValidationConfig"
+    "DataValidationConfig",
+    "DataTransformationConfig"
 ]

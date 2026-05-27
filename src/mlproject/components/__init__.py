@@ -4,7 +4,10 @@ from .data_ingestion import (
 
 from .data_validation import DataValidation
 
+from .data_transformation import DataTransformation
+
 __all__ = [
     "DataIngestion",
-    "DataValidation"
+    "DataValidation",
+    "DataTransformation"
 ]
