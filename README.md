@@ -186,40 +186,48 @@ It belongs to:
 
 ## How to run this project ?
 
-    Step 1: (optional) create .venv vitual environament
+Step 1: (optional) create .venv vitual environament
 
-        python -m venv .venv
+    python -m venv .venv
+
+Step 2: (if .venv created) activate
+
+    .venv\Scripts\activate
+
+Step 3: Install Requirements packages
     
-    Step 2: (if .venv created) activate
+    pip install -r requirements.txt
 
-        .venv\Scripts\activate
+Step 4: (if "-e ." is not included inside requirements.txt file)
 
-    Step 3: Install Requirements packages
-        
-        pip install -r requirements.txt
+    pip install -e .   
 
-    Step 4: (if "-e ." is not included inside requirements.txt file)
+When you do this:
 
-        pip install -e .   
+pip internally:
 
-    When you do this:
+1. Reads setup.py
 
-    pip internally:
+2. Executes it
 
-        Reads setup.py
+3. Finds packages
 
-        Executes it
+4. Creates installation metadata
 
-        Finds packages
+5. Creates .egg-info
 
-        Creates installation metadata
-        
-        Creates .egg-info
+Step 5: (if needed) run template file
 
-    Step 5: (if needed) run template file
+    python template.py 
 
-        python template.py 
+Step 6: run app file
 
-    Step 6: run app file
+    python app.py
 
-        python app.py
+## Data URL
+
+    https://raw.githubusercontent.com/anuragchaudharytharu/Data-Files/main/Bank%20Personal%20Loan/Bank_Personal_Loan_Modelling.csv
+
+1. Its the url in ROOT_DIR/config/config.yaml
+
+2. It's to download data for data ingestion
