@@ -123,6 +123,24 @@ class DataTransformation:
             test_arr = np.c_[X_test_arr, np.array(y_test)]
 
             # ----------------------------
+            # SAVE TRANSFORMED ARRAYS
+            # ----------------------------
+            train_arr_path = os.path.join(
+                self.config.root_dir,
+                "train.npy"
+            )
+
+            test_arr_path = os.path.join(
+                self.config.root_dir,
+                "test.npy"
+            )
+
+            np.save(train_arr_path, train_arr)
+            np.save(test_arr_path, test_arr)
+
+            logger.info("Transformed train/test arrays saved successfully")
+            
+            # ----------------------------
             # SAVE PREPROCESSOR
             # ----------------------------
             save_object(
@@ -133,8 +151,8 @@ class DataTransformation:
             logger.info("Preprocessor saved successfully")
 
             return (
-                train_arr,
-                test_arr,
+                train_arr_path,
+                test_arr_path,
                 self.config.preprocessor_obj_file_path
             )
 

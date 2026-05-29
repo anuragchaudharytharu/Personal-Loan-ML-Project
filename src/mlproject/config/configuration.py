@@ -13,7 +13,8 @@ from mlproject.utils import (
 from mlproject.entity import (
     DataValidationConfig,
     DataIngestionConfig,
-    DataTransformationConfig
+    DataTransformationConfig,
+    ModelTrainerConfig
 )
 from pathlib import Path
 
@@ -76,3 +77,24 @@ class ConfigurationManager:
         )
 
         return data_transformation_config
+    
+    # MODEL TRAINER
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+
+        config = self.config["model_trainer"]
+
+        create_directories([Path(config["root_dir"])])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=Path(config["root_dir"]),
+            model_path=Path(config["model_path"]),
+            params_path=Path(config["params_path"]),
+            train_data_path=Path(config["train_data_path"]),
+            test_data_path=Path(config["test_data_path"]),
+            target_column=config["target_column"],
+            scoring=config["scoring"],
+            cv=config["cv"],
+            n_jobs=config["n_jobs"]
+        )
+
+        return model_trainer_config

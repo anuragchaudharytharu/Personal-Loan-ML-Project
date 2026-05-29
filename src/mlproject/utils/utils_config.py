@@ -6,6 +6,7 @@ import json
 import joblib
 from pathlib import Path
 from typing import Any
+from importlib import import_module
 
 from box import ConfigBox
 from ensure import ensure_annotations
@@ -157,3 +158,9 @@ def load_object(file_path: Path):
 
     except Exception as e:
         raise CustomException(e, sys)
+
+
+def load_class(class_path: str):
+    module_name, class_name = class_path.rsplit(".", 1)
+    module = import_module(module_name)
+    return getattr(module, class_name)

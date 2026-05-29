@@ -20,3 +20,19 @@ class DataValidationConfig:
 class DataTransformationConfig:
     root_dir: Path
     preprocessor_obj_file_path: Path
+    
+
+@dataclass(frozen=True)
+class ModelTrainerConfig:
+    root_dir: Path
+    model_path: Path
+    params_path: Path
+
+    train_data_path: Path
+    test_data_path: Path
+
+    target_column: str
+
+    scoring: str
+    cv: int
+    n_jobs: int

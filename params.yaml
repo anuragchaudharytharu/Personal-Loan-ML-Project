@@ -1,1 +1,45 @@
-key: val
+models:
+  LogisticRegression:
+    params:
+      model__C: [0.01, 0.1, 1, 10]
+      model__solver: ["liblinear"]
+
+  DecisionTree:
+    params:
+      model__max_depth: [3, 5, 10, null]
+      model__min_samples_split: [2, 5, 10]
+
+  RandomForest:
+    params:
+      model__n_estimators: [100, 200]
+      model__max_depth: [5, 10, null]
+      model__min_samples_split: [2, 5]
+
+  GradientBoosting:
+    params:
+      model__n_estimators: [100, 200]
+      model__learning_rate: [0.01, 0.1]
+      model__max_depth: [3, 5]
+
+  ExtraTrees:
+    params:
+      model__n_estimators: [100, 200]
+      model__max_depth: [null, 10]
+
+  KNN:
+    params:
+      model__n_neighbors: [3, 5, 7, 9]
+      model__weights: ["uniform", "distance"]
+
+  SVM:
+    params:
+      model__C: [0.1, 1, 10]
+      model__kernel: ["rbf", "linear"]
+
+  XGBoost:
+    params:
+      model__n_estimators: [100, 200, 300]
+      model__max_depth: [3, 5, 7]
+      model__learning_rate: [0.01, 0.05, 0.1]
+      eval_metric: ["logloss"]
+      scale_pos_weight: "scale_pos_weight"

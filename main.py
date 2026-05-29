@@ -4,7 +4,8 @@ from mlproject.logging import logger
 from mlproject.pipeline import (
     DataIngestionTrainingPipeline,
     DataValidationTrainingPipeline,
-    DataTransformationTrainingPipeline
+    DataTransformationTrainingPipeline,
+    ModelTrainerTrainingPipeline
 )
 
 
@@ -53,7 +54,16 @@ if __name__ == "__main__":
 
     logger.info("Data Transformation Completed Successfully")
 
-    logger.info(f"Train array shape: {train_arr.shape}")
-    logger.info(f"Test array shape: {test_arr.shape}")
+    logger.info(f"Train array shape: {train_arr}")
+    logger.info(f"Test array shape: {test_arr}")
+
+    # ---------------- MODEL TRAINER ----------------
+    best_model_name, best_score = run_pipeline(
+        "Model Trainer Stage",
+        ModelTrainerTrainingPipeline()
+    )
+
+    logger.info(f"Best Model: {best_model_name}")
+    logger.info(f"Best Score: {best_score}")
 
     logger.info("Pipeline executed successfully")

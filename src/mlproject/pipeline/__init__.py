@@ -10,8 +10,11 @@ from .stage_03_data_transformation import (
     DataTransformationTrainingPipeline
 )
 
+from .stage_04_model_trainer import ModelTrainerTrainingPipeline
+
 __all__ = [
     "DataIngestionTrainingPipeline",
     "DataValidationTrainingPipeline",
-    "DataTransformationTrainingPipeline"
+    "DataTransformationTrainingPipeline",
+    "ModelTrainerTrainingPipeline"
 ]

@@ -6,7 +6,9 @@ from mlproject.utils.utils_config import (
     create_directories,
     read_yaml,
     get_size,
-    save_object
+    save_object,
+    load_class,
+    load_object
 )
 
 __all__ = [
@@ -17,5 +19,7 @@ __all__ = [
     "create_directories",
     "read_yaml",
     "get_size",
-    "save_object"
+    "save_object",
+    "load_class",
+    "load_object"
 ]
