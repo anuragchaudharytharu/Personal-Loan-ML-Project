@@ -31,3 +31,12 @@ model_trainer:
   scoring: f1
   cv: 3
   n_jobs: -1
+
+
+model_evaluation:
+  root_dir: artifacts/model_evaluation
+  test_data_path: artifacts/data_transformation/test.npy
+  model_path: artifacts/model_trainer/model.pkl
+  metric_file_name: metrics.json
+  baseline_f1_score: 0.8
+  baseline_accuracy: 0.8

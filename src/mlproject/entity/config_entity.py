@@ -36,3 +36,13 @@ class ModelTrainerConfig:
     scoring: str
     cv: int
     n_jobs: int
+    
+
+@dataclass(frozen=True)
+class ModelEvaluationConfig:
+    root_dir: Path
+    test_data_path: Path
+    model_path: Path
+    metric_file_name: str
+    baseline_f1_score: float
+    baseline_accuracy: float

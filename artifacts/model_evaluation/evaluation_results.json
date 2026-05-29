@@ -1,0 +1,144 @@
+{
+    "evaluation_timestamp": "2026-05-29T10:02:08.267781",
+    "model_path": "artifacts/model_trainer/model.pkl",
+    "metrics": {
+        "f1_score": 0.9619047619047619,
+        "accuracy": 0.992,
+        "precision": 0.9619047619047619,
+        "recall": 0.9619047619047619,
+        "confusion_matrix": [
+            [
+                891,
+                4
+            ],
+            [
+                4,
+                101
+            ]
+        ],
+        "classification_report": {
+            "0.0": {
+                "precision": 0.9955307262569832,
+                "recall": 0.9955307262569832,
+                "f1-score": 0.9955307262569832,
+                "support": 895.0
+            },
+            "1.0": {
+                "precision": 0.9619047619047619,
+                "recall": 0.9619047619047619,
+                "f1-score": 0.9619047619047619,
+                "support": 105.0
+            },
+            "accuracy": 0.992,
+            "macro avg": {
+                "precision": 0.9787177440808725,
+                "recall": 0.9787177440808725,
+                "f1-score": 0.9787177440808725,
+                "support": 1000.0
+            },
+            "weighted avg": {
+                "precision": 0.992,
+                "recall": 0.992,
+                "f1-score": 0.992,
+                "support": 1000.0
+            }
+        }
+    },
+    "comparison_with_baseline": {
+        "f1_score_improvement": 0.16190476190476188,
+        "accuracy_improvement": 0.19199999999999995,
+        "passes_baseline": true
+    },
+    "model_metadata": {
+        "best_model_name": "XGBoost",
+        "best_model_f1_score": 0.9619047619047619,
+        "best_model_params": {
+            "learning_rate": 0.1,
+            "max_depth": 7,
+            "n_estimators": 300
+        },
+        "training_date": "2026-05-29T10:02:05.997754",
+        "cv_folds": 3,
+        "scoring_metric": "f1",
+        "model_path": "artifacts\\model_trainer\\model.pkl",
+        "all_models_f1_scores": {
+            "LogisticRegression": 0.8350515463917526,
+            "DecisionTree": 0.9326923076923077,
+            "RandomForest": 0.9560975609756097,
+            "GradientBoosting": 0.9607843137254902,
+            "ExtraTrees": 0.9353233830845771,
+            "KNN": 0.7932960893854749,
+            "SVM": 0.9215686274509803,
+            "XGBoost": 0.9619047619047619
+        },
+        "all_models_summary": {
+            "LogisticRegression": {
+                "f1_score": 0.8350515463917526,
+                "best_params": {
+                    "C": 10,
+                    "solver": "liblinear"
+                },
+                "cv_best_score": 0.7246146480091434
+            },
+            "DecisionTree": {
+                "f1_score": 0.9326923076923077,
+                "best_params": {
+                    "max_depth": null,
+                    "min_samples_split": 2
+                },
+                "cv_best_score": 0.9095048125061617
+            },
+            "RandomForest": {
+                "f1_score": 0.9560975609756097,
+                "best_params": {
+                    "max_depth": null,
+                    "min_samples_split": 2,
+                    "n_estimators": 100
+                },
+                "cv_best_score": 0.9131429468257849
+            },
+            "GradientBoosting": {
+                "f1_score": 0.9607843137254902,
+                "best_params": {
+                    "learning_rate": 0.1,
+                    "max_depth": 3,
+                    "n_estimators": 100
+                },
+                "cv_best_score": 0.9135482857338119
+            },
+            "ExtraTrees": {
+                "f1_score": 0.9353233830845771,
+                "best_params": {
+                    "max_depth": null,
+                    "n_estimators": 200
+                },
+                "cv_best_score": 0.8769958327480452
+            },
+            "KNN": {
+                "f1_score": 0.7932960893854749,
+                "best_params": {
+                    "n_neighbors": 3,
+                    "weights": "distance"
+                },
+                "cv_best_score": 0.7255157941399949
+            },
+            "SVM": {
+                "f1_score": 0.9215686274509803,
+                "best_params": {
+                    "C": 10,
+                    "kernel": "rbf"
+                },
+                "cv_best_score": 0.8715418247438413
+            },
+            "XGBoost": {
+                "f1_score": 0.9619047619047619,
+                "best_params": {
+                    "learning_rate": 0.1,
+                    "max_depth": 7,
+                    "n_estimators": 300
+                },
+                "cv_best_score": 0.9086832436616925
+            }
+        }
+    }
+}

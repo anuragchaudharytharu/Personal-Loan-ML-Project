@@ -14,7 +14,8 @@ from mlproject.entity import (
     DataValidationConfig,
     DataIngestionConfig,
     DataTransformationConfig,
-    ModelTrainerConfig
+    ModelTrainerConfig,
+    ModelEvaluationConfig
 )
 from pathlib import Path
 
@@ -98,3 +99,20 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    # MODEL EVALUATION
+    def get_model_evaluation_config(self) -> ModelEvaluationConfig:
+        config = self.config.model_evaluation
+        
+        create_directories([config.root_dir])
+        
+        model_evaluation_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            metric_file_name=config.metric_file_name,
+            baseline_f1_score=config.get('baseline_f1_score', 0.8),
+            baseline_accuracy=config.get('baseline_accuracy', 0.8)
+        )
+        
+        return model_evaluation_config
