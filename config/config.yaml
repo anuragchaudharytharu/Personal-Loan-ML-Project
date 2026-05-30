@@ -17,6 +17,8 @@ data_validation:
 data_transformation:
   root_dir: artifacts/data_transformation
   preprocessor_obj_file_path: artifacts/data_transformation/preprocessor.pkl
+  outlier_method: iqr  # Options: "iqr" or "zscore"
+  outlier_threshold: 1.5  # For IQR: 1.5 (standard), 3.0 (conservative)
 
 
 model_trainer:

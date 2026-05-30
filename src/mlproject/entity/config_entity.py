@@ -46,3 +46,5 @@ class ModelEvaluationConfig:
     metric_file_name: str
     baseline_f1_score: float
     baseline_accuracy: float
+    outlier_method: str = "iqr"  # Default value
+    outlier_threshold: float = 1.5  # Default value

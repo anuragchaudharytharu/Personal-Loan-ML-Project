@@ -112,7 +112,9 @@ class ConfigurationManager:
             model_path=config.model_path,
             metric_file_name=config.metric_file_name,
             baseline_f1_score=config.get('baseline_f1_score', 0.8),
-            baseline_accuracy=config.get('baseline_accuracy', 0.8)
+            baseline_accuracy=config.get('baseline_accuracy', 0.8),
+            outlier_method=config.get('outlier_method', 'iqr'),
+            outlier_threshold=config.get('outlier_threshold', 1.5)
         )
         
         return model_evaluation_config

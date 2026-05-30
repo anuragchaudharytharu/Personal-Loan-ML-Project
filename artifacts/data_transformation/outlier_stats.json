@@ -1,0 +1,20 @@
+{
+    "Income": {
+        "lower_bound": -49.5,
+        "upper_bound": 186.5,
+        "outliers_removed": 81,
+        "outlier_percentage": 2.025
+    },
+    "CCAvg": {
+        "lower_bound": -2.1500000000000004,
+        "upper_bound": 5.45,
+        "outliers_removed": 238,
+        "outlier_percentage": 5.949999999999999
+    },
+    "Mortgage": {
+        "lower_bound": -151.5,
+        "upper_bound": 252.5,
+        "outliers_removed": 244,
+        "outlier_percentage": 6.1
+    }
+}

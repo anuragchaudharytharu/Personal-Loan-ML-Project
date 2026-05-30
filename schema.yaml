@@ -35,3 +35,8 @@ numerical_columns:
   - CD Account
   - Online
   - CreditCard
+
+outlier_columns:
+  - Income
+  - CCAvg
+  - Mortgage
