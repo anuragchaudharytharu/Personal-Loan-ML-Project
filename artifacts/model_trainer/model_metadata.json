@@ -1,21 +1,21 @@
 {
-    "best_model_name": "GradientBoosting",
-    "best_model_f1_score": 0.9423076923076923,
+    "best_model_name": "RandomForest",
+    "best_model_f1_score": 0.9514563106796117,
     "best_model_params": {
-        "learning_rate": 0.1,
-        "max_depth": 3,
-        "n_estimators": 200
+        "max_depth": null,
+        "min_samples_split": 2,
+        "n_estimators": 100
     },
-    "training_date": "2026-05-30T22:49:14.467295",
+    "training_date": "2026-05-31T13:04:30.153685",
     "cv_folds": 3,
     "scoring_metric": "f1",
     "model_path": "artifacts\\model_trainer\\model.pkl",
     "all_models_f1_scores": {
         "LogisticRegression": 0.7699115044247787,
         "DecisionTree": 0.9186602870813397,
-        "RandomForest": 0.9359605911330049,
-        "GradientBoosting": 0.9423076923076923,
-        "ExtraTrees": 0.9035532994923858,
+        "RandomForest": 0.9514563106796117,
+        "GradientBoosting": 0.9458128078817734,
+        "ExtraTrees": 0.9353233830845771,
         "KNN": 0.72,
         "SVM": 0.8426395939086294,
         "XGBoost": 0.9423076923076923
@@ -35,33 +35,33 @@
                 "max_depth": 5,
                 "min_samples_split": 2
             },
-            "cv_best_score": 0.8252128565346957
+            "cv_best_score": 0.8387921503593145
         },
         "RandomForest": {
-            "f1_score": 0.9359605911330049,
+            "f1_score": 0.9514563106796117,
             "best_params": {
                 "max_depth": null,
                 "min_samples_split": 2,
-                "n_estimators": 200
+                "n_estimators": 100
             },
-            "cv_best_score": 0.8447911955374643
+            "cv_best_score": 0.8591889039650233
         },
         "GradientBoosting": {
-            "f1_score": 0.9423076923076923,
+            "f1_score": 0.9458128078817734,
             "best_params": {
                 "learning_rate": 0.1,
-                "max_depth": 3,
+                "max_depth": 5,
                 "n_estimators": 200
             },
-            "cv_best_score": 0.8581064077890134
+            "cv_best_score": 0.861302528983846
         },
         "ExtraTrees": {
-            "f1_score": 0.9035532994923858,
+            "f1_score": 0.9353233830845771,
             "best_params": {
                 "max_depth": null,
                 "n_estimators": 100
             },
-            "cv_best_score": 0.7913548387096775
+            "cv_best_score": 0.7939581322826451
         },
         "KNN": {
             "f1_score": 0.72,
