@@ -206,8 +206,8 @@ class ModelEvaluation:
                 logger.info(f"  - Performance Gap: {metrics['f1_score'] - metadata.get('best_model_f1_score', 0):.4f}")
             
             logger.info("="*50)
-            logger.info(f"✅ Model Evaluation Completed Successfully")
-            logger.info(f"📁 Results saved to: {self.config.root_dir}")
+            logger.info(f"Model Evaluation Completed Successfully")
+            logger.info(f"Results saved to: {self.config.root_dir}")
             logger.info("="*50)
             
             return metrics, evaluation_path

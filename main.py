@@ -81,21 +81,21 @@ if __name__ == "__main__":
 
         # ---------------- FINAL SUMMARY ----------------
         logger.info("="*50)
-        logger.info("🎉 FULL PIPELINE EXECUTED SUCCESSFULLY 🎉")
+        logger.info("FULL PIPELINE EXECUTED SUCCESSFULLY")
         logger.info("="*50)
-        logger.info(f"🏆 Best Model from Training: {best_model_name}")
-        logger.info(f"📊 Training F1 Score: {best_score:.4f}")
-        logger.info(f"📊 Test F1 Score: {metrics['f1_score']:.4f}")
-        logger.info(f"📊 Test Accuracy: {metrics['accuracy']:.4f}")
-        logger.info(f"📊 Test Precision: {metrics['precision']:.4f}")
-        logger.info(f"📊 Test Recall: {metrics['recall']:.4f}")
+        logger.info(f"Best Model from Training: {best_model_name}")
+        logger.info(f"Training F1 Score: {best_score:.4f}")
+        logger.info(f"Test F1 Score: {metrics['f1_score']:.4f}")
+        logger.info(f"Test Accuracy: {metrics['accuracy']:.4f}")
+        logger.info(f"Test Precision: {metrics['precision']:.4f}")
+        logger.info(f"Test Recall: {metrics['recall']:.4f}")
         
         # Calculate performance gap
         performance_gap = best_score - metrics['f1_score']
         if performance_gap > 0:
-            logger.info(f"⚠️  Performance Gap (Train-Test): {performance_gap:.4f}")
+            logger.info(f"Performance Gap (Train-Test): {performance_gap:.4f}")
         else:
-            logger.info(f"✅ Performance Gap (Train-Test): {performance_gap:.4f}")
+            logger.info(f"Performance Gap (Train-Test): {performance_gap:.4f}")
         
         logger.info("="*50)
 
@@ -109,19 +109,19 @@ if __name__ == "__main__":
             model_path = Path("artifacts/model_trainer/model.pkl")
             if model_path.exists():
                 model = load_object(model_path)
-                logger.info(f"✅ Model loaded successfully from {model_path}")
+                logger.info(f"Model loaded successfully from {model_path}")
                 
                 # Load metadata
                 metadata_path = Path("artifacts/model_trainer/model_metadata.json")
                 if metadata_path.exists():
                     with open(metadata_path, 'r') as f:
                         metadata = json.load(f)
-                    logger.info("📋 Model metadata loaded:")
-                    logger.info(f"   - Model: {metadata['best_model_name']}")
-                    logger.info(f"   - Training F1 Score: {metadata['best_model_f1_score']:.4f}")
+                    logger.info("Model metadata loaded:")
+                    logger.info(f"Model: {metadata['best_model_name']}")
+                    logger.info(f"Training F1 Score: {metadata['best_model_f1_score']:.4f}")
                     
                     # Log all models' F1 scores from training
-                    logger.info("📊 All Models Performance (Training):")
+                    logger.info("All Models Performance (Training):")
                     for model_name, score in metadata['all_models_f1_scores'].items():
                         logger.info(f"   - {model_name}: {score:.4f}")
             else:
@@ -132,10 +132,10 @@ if __name__ == "__main__":
             if eval_path.exists():
                 with open(eval_path, 'r') as f:
                     eval_results = json.load(f)
-                logger.info("📊 Evaluation Results Loaded:")
-                logger.info(f"   - Test F1 Score: {eval_results['metrics']['f1_score']:.4f}")
-                logger.info(f"   - Test Accuracy: {eval_results['metrics']['accuracy']:.4f}")
-                logger.info(f"   - Passes Baseline: {eval_results['comparison_with_baseline']['passes_baseline']}")
+                logger.info("Evaluation Results Loaded:")
+                logger.info(f"Test F1 Score: {eval_results['metrics']['f1_score']:.4f}")
+                logger.info(f"Test Accuracy: {eval_results['metrics']['accuracy']:.4f}")
+                logger.info(f"Passes Baseline: {eval_results['comparison_with_baseline']['passes_baseline']}")
                 
         except Exception as e:
             logger.warning(f"Could not verify saved artifacts: {str(e)}")
