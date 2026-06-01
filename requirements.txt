@@ -79,7 +79,7 @@ matplotlib==3.10.9
 matplotlib-inline==0.2.2
 mdurl==0.1.2
 mistune==3.2.1
--e git+https://github.com/anuragchaudharytharu/Personal-Loan-ML-Project.git@e3ddbed395ea12563c6c8df9100107ab7ebb72d8#egg=mlProject
+-e
 mysql-connector-python==9.7.0
 narwhals==2.21.2
 nbclient==0.10.4
